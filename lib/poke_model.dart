@@ -1,6 +1,12 @@
+import 'package:pokemon/pokemon.dart';
 import 'api.dart';
+
 class PokeModel{
-  fetchPokemon(){
-    Api().fetchPokemon();
+  Future<Pokemon> _pokemon;
+
+  Future<Pokemon> get pokemon => _pokemon;
+
+  fetchPokemon(int number){
+    _pokemon = Api().fetchPokemon(number);
   }
 }
